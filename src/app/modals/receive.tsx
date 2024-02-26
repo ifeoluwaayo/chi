@@ -14,8 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { CopyIcon } from "@radix-ui/react-icons";
-import { revalidatePath } from "next/cache";
-import { getCurrentUser } from "../actions";
+import { authenticate } from "../actions";
 import { chi } from "@/lib/chimoney";
 
 const Receive = () => {
@@ -28,7 +27,7 @@ const Receive = () => {
     setIsOpen(action.get("receive") === "true");
 
     async function details() {
-      const user = await getCurrentUser();
+      const user = await authenticate();
       const u = await chi(`/sub-account/get?id=${user?.id}`, {});
       setUser(u?.data);
     }

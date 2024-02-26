@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { chi } from "@/lib/chimoney";
 import { Banks } from "@/components/banks";
-import { send } from "../actions";
+import { authenticate, send } from "../actions";
 
 const Withdraw = () => {
   const router = useRouter();
@@ -34,6 +34,12 @@ const Withdraw = () => {
 
   useEffect(() => {
     setIsOpen(action.get("withdraw") === "true");
+
+    async function isAuth() {
+      await authenticate();
+    }
+
+    isAuth();
   }, [action]);
 
   function goBack() {

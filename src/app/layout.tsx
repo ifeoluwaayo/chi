@@ -5,7 +5,6 @@ import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
 import Receive from "./modals/receive";
 import Withdraw from "./modals/send";
-import { getCurrentUser } from "@/lib/firebase";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +18,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await getCurrentUser();
-  const isAuthenticated = !!user?.email;
-
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-50`}>
@@ -30,12 +26,8 @@ export default async function RootLayout({
         <Toaster />
 
         {/* Modals */}
-        {isAuthenticated && (
-          <>
-            <Receive />
-            <Withdraw />
-          </>
-        )}
+        <Receive />
+        <Withdraw />
       </body>
     </html>
   );
