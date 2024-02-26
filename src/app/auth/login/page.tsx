@@ -7,7 +7,7 @@ const page = async () => {
     if (user?.email) return true;
   });
 
-  if (isAuthenticated) redirect("/");
+  // if (isAuthenticated) redirect("/");
   return <Form />;
 };
 
