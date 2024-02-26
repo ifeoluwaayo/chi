@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { CopyIcon } from "@radix-ui/react-icons";
 import { revalidatePath } from "next/cache";
-import { getCurrentUser } from "../auth/auth";
+import { getCurrentUser } from "../actions";
 import { chi } from "@/lib/chimoney";
 
 const Receive = () => {

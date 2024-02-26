@@ -1,7 +1,6 @@
 "use client";
 import { chi } from "@/lib/chimoney";
 import { useState, useEffect } from "react";
-import { getCurrentUser } from "@/app/auth/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import {
@@ -11,6 +10,7 @@ import {
   PaperPlaneIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { getCurrentUser } from "@/app/actions";
 
 const Balance = () => {
   const [user, setUser] = useState<any | null>(null);

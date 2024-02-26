@@ -1,4 +1,4 @@
-"use server";
+// "use server";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -8,12 +8,6 @@ import {
 import { auth, db } from "../../../firebase.config";
 import { doc, setDoc } from "firebase/firestore";
 import { chi } from "@/lib/chimoney";
-import { getCurrentUser as get } from "@/lib/firebase";
-
-export async function getCurrentUser() {
-  const c = await get();
-  return c;
-}
 
 const BASE_URL =
   process.env.NODE_ENV === "development"
@@ -25,7 +19,7 @@ export async function signIn(email: string, password: string) {
     const user = await signInWithEmailAndPassword(auth, email, password);
     const idToken = await user.user.getIdToken();
 
-    const response = await fetch(BASE_URL + "/api/auth/signin", {
+    const response = await fetch("/api/auth/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +45,7 @@ export async function signInGoogle() {
     const user = await signInWithPopup(auth, provider);
     const idToken = await user.user.getIdToken();
 
-    const response = await fetch(BASE_URL + "/api/auth/signin", {
+    const response = await fetch("/api/auth/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -102,7 +96,7 @@ export async function createWithGoogle() {
 
     const idToken = await user.user.getIdToken();
 
-    const response = await fetch(BASE_URL + "/api/auth/signin", {
+    const response = await fetch("/api/auth/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -153,7 +147,7 @@ export async function createAccount(
 
     const idToken = await user.user.getIdToken();
 
-    const response = await fetch(BASE_URL + "/api/auth/signin", {
+    const response = await fetch("/api/auth/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -176,7 +170,7 @@ export async function signOut() {
   try {
     await auth.signOut();
 
-    const response = await fetch(BASE_URL + "/api/auth/logout", {
+    const response = await fetch("/api/auth/logout", {
       headers: {
         "Content-Type": "application/json",
       },

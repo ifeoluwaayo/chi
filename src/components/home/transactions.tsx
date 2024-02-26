@@ -1,4 +1,4 @@
-import { getCurrentUser } from "@/app/auth/auth";
+import { getCurrentUser } from "@/app/actions";
 import { chi } from "@/lib/chimoney";
 import Image from "next/image";
 import Link from "next/link";

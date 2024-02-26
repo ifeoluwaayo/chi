@@ -1,6 +1,6 @@
 "use server";
 import { chi } from "@/lib/chimoney";
-import { getCurrentUser } from "@/lib/firebase";
+import { getCurrentUser as get } from "@/lib/firebase";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -12,7 +12,7 @@ export async function send({
   amount: number;
 }) {
   try {
-    const user = await getCurrentUser();
+    const user = await get();
     const res = await chi(`/wallets/transfer`, {
       body: {
         subAccount: user?.id,
@@ -35,4 +35,9 @@ export async function authenticate() {
   if (!isAuthenticated) {
     return redirect("/auth/login");
   } else return user;
+}
+
+export async function getCurrentUser() {
+  const c = await get();
+  return c;
 }
