@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/toaster";
 import Receive from "./modals/receive";
 import Withdraw from "./modals/send";
 import { getCurrentUser } from "@/lib/firebase";
-import { redirect } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,13 +30,11 @@ export default async function RootLayout({
         <Toaster />
 
         {/* Modals */}
-        {isAuthenticated ? (
+        {isAuthenticated && (
           <>
             <Receive />
             <Withdraw />
           </>
-        ) : (
-          redirect("/auth/login")
         )}
       </body>
     </html>
