@@ -146,7 +146,7 @@ const Withdraw = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={goBack}>
-      <DialogContent className="sm:max-w-md max-w-[85vw]">
+      <DialogContent className="sm:max-w-md max-w-[85vw] rounded-2xl">
         <DialogHeader>
           <DialogTitle>Send Money</DialogTitle>
           <DialogDescription>Withdraw funds from wallet</DialogDescription>
