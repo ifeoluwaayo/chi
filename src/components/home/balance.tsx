@@ -25,10 +25,6 @@ const Balance = () => {
     details();
   }, []);
 
-  useEffect(() => {
-    // console.log(user);
-  }, [user]);
-
   return (
     <div className="bg-gray-300 mt-3 flex gap-2 flex-col rounded-2xl border border-gray-600 shadow-md p-5 w-full h-fit">
       <div className="flex gap-3 items-center">

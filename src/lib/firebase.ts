@@ -33,7 +33,7 @@ export async function isUserAuthenticated(
     const isRevoked = !(await auth.verifySessionCookie(_session, true));
     return !isRevoked;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return false;
   }
 }

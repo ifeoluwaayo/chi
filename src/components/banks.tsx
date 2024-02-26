@@ -39,7 +39,6 @@ export function Banks({
         ...rawBanks?.data,
       ];
 
-      // console.log(banks);
       setBanks(banks);
     }
 

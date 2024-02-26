@@ -34,7 +34,7 @@ export async function signIn(email: string, password: string) {
       return true;
     } else return false;
   } catch (err) {
-    // console.log(err);
+    console.log(err);
     return false;
   }
 }
@@ -60,7 +60,7 @@ export async function signInGoogle() {
       return true;
     } else return false;
   } catch (e) {
-    // console.error(e);
+    console.error(e);
     return false;
   }
 }
@@ -111,7 +111,7 @@ export async function createWithGoogle() {
       return true;
     } else return false;
   } catch (e) {
-    // console.error(e);
+    console.error(e);
     return false;
   }
 }
@@ -162,7 +162,7 @@ export async function createAccount(
       return true;
     } else return false;
   } catch (err) {
-    // console.log(err);
+    console.log(err);
     return false;
   }
 }
@@ -183,7 +183,7 @@ export async function signOut() {
       return true;
     } else return false;
   } catch (err) {
-    // console.log(err);
+    console.log(err);
     return false;
   }
 }

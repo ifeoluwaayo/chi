@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
       data: "Signed in successfully.",
     });
   } catch (e) {
-    // console.error(e);
+    console.error(e);
     return NextResponse.json({ success: false, data: e });
   }
 }

@@ -4,7 +4,6 @@ import Link from "next/link";
 import ReactTimeago from "react-timeago";
 
 export const Transaction = ({ t }: { t: any }) => {
-  // console.log(t);
   return (
     <Link
       href={`/transaction/${t.issueID}`}

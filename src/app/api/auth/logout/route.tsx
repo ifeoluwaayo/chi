@@ -22,7 +22,7 @@ export async function GET() {
       data: "Signed out successfully.",
     });
   } catch (e) {
-    // console.error(e);
+    console.error(e);
     return NextResponse.json({ success: false, data: e });
   }
 }
