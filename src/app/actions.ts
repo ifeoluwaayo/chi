@@ -33,6 +33,6 @@ export async function authenticate() {
   const user = await getCurrentUser();
   const isAuthenticated = !!user?.email;
   if (!isAuthenticated) {
-    redirect("/auth/login");
+    return redirect("/auth/login");
   } else return user;
 }
