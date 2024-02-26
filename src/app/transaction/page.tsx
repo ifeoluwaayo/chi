@@ -20,14 +20,14 @@ const Transactions = async () => {
   });
 
   return (
-    <div className="mt-6 w-full">
+    <div className="my-6 w-full">
       <h1 className="text-xl font-medium ml-2 flex items-center justify-between">
         Recent Transactions{" "}
         <Link href="/transactions" className="text-sm text-green-500">
           View More
         </Link>
       </h1>
-      <div className="flex flex-col gap-2 px-5 mt-3 pt-3 w-full">
+      <div className="flex flex-col gap-2 px-2 mt-3 pt-3 w-full">
         {transactions?.length === 0 && (
           <div className="flex flex-col items-center justify-center gap-3 mt-5">
             <Image

@@ -22,10 +22,10 @@ export const Transaction = ({ t }: { t: any }) => {
           alt="Transaction"
           className={`rounded-full p-2 ${
             t?.paymentType === "credit" ? "bg-green-500" : "bg-red-500"
-          }`}
+          } w-[35px] h-[35px] md:w-12 md:h-12 object-cover`}
         />
-        <div className="flex flex-col ml-5">
-          <h3 className="text-lg font-semibold">
+        <div className="flex flex-col ml-3 md:ml-5">
+          <h3 className="md:text-lg font-semibold">
             You {t?.paymentType === "credit" ? "received" : "sent"} $
             {t?.valueInUSD}
           </h3>
@@ -40,7 +40,7 @@ export const Transaction = ({ t }: { t: any }) => {
       <p
         className={`${
           t?.paymentType === "credit" ? "bg-green-500" : "bg-red-500"
-        } capitalize rounded-2xl text-white text-xs px-2 py-1`}>
+        } capitalize rounded-2xl text-white text-xs text-center px-2 py-1`}>
         {t?.paymentType}ed ${t?.valueInUSD}
       </p>
     </Link>

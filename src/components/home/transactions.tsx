@@ -20,7 +20,7 @@ const Transactions = async () => {
   });
 
   return (
-    <div className="mt-6 w-full md:w-[70vw]">
+    <div className="my-6 w-full md:w-[70vw]">
       <h1 className="text-xl font-medium ml-2 flex items-center justify-between">
         Recent Transactions{" "}
         <Link href="/transaction" className="text-sm text-green-500">

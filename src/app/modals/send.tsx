@@ -140,7 +140,7 @@ const Withdraw = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={goBack}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md max-w-[85vw]">
         <DialogHeader>
           <DialogTitle>Send Money</DialogTitle>
           <DialogDescription>Withdraw funds from wallet</DialogDescription>
@@ -209,7 +209,7 @@ const Withdraw = () => {
             </p>
           </div>
         </div>
-        <DialogFooter className="flex items-center justify-between">
+        <DialogFooter className="flex items-center gap-3 justify-between">
           <DialogClose asChild>
             <Button type="button" variant="secondary">
               Close
@@ -219,7 +219,7 @@ const Withdraw = () => {
             className=""
             disabled={!transaction.accountName || !transaction.amount}
             onClick={transfer}>
-            {loading ? "Transfering..." : "Transfer"}
+            {loading ? "Transferring..." : "Transfer"}
           </Button>
         </DialogFooter>
       </DialogContent>

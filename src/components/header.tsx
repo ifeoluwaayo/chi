@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <header className="z-10 flex items-center justify-between px-5 py-3 md:px-8 md:py-5">
-      <Link href="/" className="text-3xl font-medium">
+      <Link href="/" className="text-2xl md:text-3xl font-medium">
         Chimoney{" "}
         <span className="text-base font-normal font-mono">- Ayomide</span>
       </Link>

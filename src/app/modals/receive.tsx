@@ -42,7 +42,7 @@ const Receive = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={goBack}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md max-w-[85vw]">
         <DialogHeader>
           <DialogTitle>Share Account Details</DialogTitle>
           <DialogDescription>

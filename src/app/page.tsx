@@ -57,7 +57,7 @@ async function Rates() {
   }
 
   return (
-    <div className="flex flex-col gap-5 p-5">
+    <div className=" flex-col gap-5 hidden md:flex p-5">
       <h3 className="whitespace-nowrap text-lg font-medium">
         Today&apos;s Rates 🔥
       </h3>
