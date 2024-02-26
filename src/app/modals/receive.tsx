@@ -37,6 +37,7 @@ const Receive = () => {
 
   function goBack() {
     router.back();
+    setIsOpen(false);
   }
 
   return (

@@ -44,6 +44,7 @@ const Withdraw = () => {
 
   function goBack() {
     router.back();
+    setIsOpen(false);
     setTransaction({
       amount: 0,
       bank: { id: 0, code: "", name: "" },
